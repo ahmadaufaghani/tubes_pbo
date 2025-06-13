@@ -463,10 +463,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     gap: 14px;
 }
 
-.content-header-title {
-    padding: 20px;
-}
-
 .admin-nav {
     display: flex;
     gap: 20px;
