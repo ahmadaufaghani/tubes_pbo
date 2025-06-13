@@ -19,9 +19,7 @@
             <input class="input-box" type="password" name="password" placeholder="Password" required>
             <button type="submit" class="input-btn">Login</button>
         </form>
-        <br>
-        <p>Belum punya akun admin? <a href="registerAdmin.jsp">Daftar di sini</a></p>
-        <p><a href="index.jsp">Kembali ke login pembeli</a></p>
+       
      </div>
 </body>
 </html>
