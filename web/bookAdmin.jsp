@@ -22,7 +22,9 @@
 </head>
 <body>
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-    <h2 class="content-header-title">Daftar Buku</h2>
+    <div class="header-transaction-admin">
+        <h2>Daftar Buku</h2>
+    </div>
     <a href="addBuku.jsp" class="btn btn-input">Tambah Buku</a>
 </div>
  
