@@ -18,7 +18,7 @@
         <button type="submit" class="input-btn">Login</button>
     </form>
     <br>
-    <p><a href="loginAdmin.jsp">Masuk sebagai admin</a></p>
+    
 </body>
 </html>
 
