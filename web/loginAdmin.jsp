@@ -11,15 +11,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h2>Login Admin</h2>
-    <form method="POST" action="AdminController">
-        <input type="hidden" name="menu" value="login" />
-        <input class="input-box" type="email" name="email" placeholder="Email address" required>
-        <input class="input-box" type="password" name="password" placeholder="Password" required>
-        <button type="submit" class="input-btn">Login</button>
-    </form>
-    <p>Belum punya akun admin? <a href="registerAdmin.jsp">Daftar di sini</a></p>
-    <p><a href="index.jsp">Kembali ke login pembeli</a></p>
+    <div class="form-card">
+        <h2 class="form-title">Login Admin</h2>
+        <form method="POST" action="AdminController">
+            <input type="hidden" name="menu" value="login" />
+            <input class="input-box" type="email" name="email" placeholder="Email address" required>
+            <input class="input-box" type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="input-btn">Login</button>
+        </form>
+        <br>
+        <p>Belum punya akun admin? <a href="registerAdmin.jsp">Daftar di sini</a></p>
+        <p><a href="index.jsp">Kembali ke login pembeli</a></p>
+     </div>
 </body>
 </html>
 
