@@ -30,6 +30,12 @@
                     p="Login";
                 }
             %>
+        <div class="header">
+            <div class="img">
+                <h2>e-book</h1>
+            </div>
+            <p><a style="margin:0;" class="btn btn-continue-exploration" href="loginAdmin.jsp">Masuk sebagai admin</a></p>
+        </div>
         <div class="container">
             <h1>e-book</h1>
             <div class="nav underline">
