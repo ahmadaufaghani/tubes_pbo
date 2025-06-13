@@ -131,4 +131,22 @@ public class Buku {
     public void setHarga(Integer harga) {
         this.harga = harga;
     }
+    
+    public void insert() {
+        String query = "INSERT INTO buku (judul, penulis, tahunTerbit, jumlahHalaman, harga) VALUES ('"
+        + getJudul() + "', '" + getPenulis() + "', " + getTahunTerbit() + ", " + getJumlahHalaman() + ", " + getHarga() + ")";
+        db.runQuery(query);
+    }
+    
+    public void update() {
+        String query = "UPDATE buku SET judul = '" + getJudul() + "', penulis = '" + getPenulis()
+        + "', tahunTerbit = " + getTahunTerbit() + ", jumlahHalaman = " + getJumlahHalaman()
+        + ", harga = " + getHarga() + " WHERE id = " + getId();
+        db.runQuery(query);
+    }
+
+    public void delete() {
+        String query = "DELETE FROM buku WHERE id = " + getId();
+        db.runQuery(query);
+    }
 }

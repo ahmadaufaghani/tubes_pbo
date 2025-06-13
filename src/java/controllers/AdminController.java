@@ -12,15 +12,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import models.Admin;
 import models.JDBC;
-import models.Pembeli;
+
 /**
  *
  * @author bamba
  */
-@WebServlet(name = "PembeliController", urlPatterns = {"/PembeliController"})
-public class PembeliController extends HttpServlet {
-    JDBC db = new JDBC();
+@WebServlet(name = "AdminController", urlPatterns = {"/AdminController"})
+public class AdminController extends HttpServlet {
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -30,7 +35,7 @@ public class PembeliController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -44,25 +49,14 @@ public class PembeliController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String menu = request.getParameter("menu");
+        
         if (menu == null) {
-            String id = request.getParameter("id");
-            Pembeli pb = new Pembeli().find(id);
-            if (pb != null) {
-                request.setAttribute("list", pb);
-                request.getRequestDispatcher("account.jsp").forward(request, response);
-            } else {
-                response.sendRedirect(request.getContextPath()+"/index.jsp");
-            }
-        } else if (menu.equals("delete")) {
-            String id = request.getParameter("id");
-            Pembeli pb = new Pembeli().find(id);
-            pb.setId(Integer.parseInt(id));
-            pb.delete();
-            response.sendRedirect(request.getContextPath()+"/index.jsp");
+            response.sendRedirect("dashboardAdmin.jsp");
         } else if (menu.equals("logout")) {
             request.getSession(false).invalidate();
-            response.sendRedirect(request.getContextPath()+"/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/index.jsp");
         }
     }
 
@@ -78,40 +72,47 @@ public class PembeliController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
-        Pembeli p = new Pembeli();
+        Admin admin = new Admin();
+        
         if (menu.equals("login")) {
             String email = request.getParameter("email");
             String password = request.getParameter("password");
-            p.setEmail(email);
-            p.setPassword(password);
-            Pembeli pb = p.Login();
             
-            if (pb != null) {
-                request.getSession().setAttribute("userId", pb.getId());
-                response.sendRedirect("BukuController");
+            admin.setEmail(email);
+            admin.setPassword(password);
+            Admin adm = (Admin) admin.Login();
+            
+            if (adm != null) {
+                request.getSession().setAttribute("adminId", adm.getId());
+                request.getSession().setAttribute("adminData", adm);
+                response.sendRedirect("dashboardAdmin.jsp");
             } else {
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("login.jsp");
             }
-        } else if (menu.equals("register")){
+        } else if (menu.equals("register")) {
+            String nama = request.getParameter("nama");
             String email = request.getParameter("email");
-            String nama = request.getParameter("name");
             String password = request.getParameter("password");
-            p.setEmail(email);
-            p.setNama(nama);
-            p.setPassword(password);
-            p.Register();
-            response.sendRedirect(request.getContextPath()+"/index.jsp");
+            
+            admin.setNama(nama);
+            admin.setEmail(email);
+            admin.setPassword(password);
+            admin.Register();
+            
+            response.sendRedirect("login.jsp");
         } else if (menu.equals("update")) {
             String id = request.getParameter("id");
-            String email = request.getParameter("email");
             String nama = request.getParameter("nama");
+            String email = request.getParameter("email");
             String password = request.getParameter("password");
-            p.setId(Integer.parseInt(id));
-            p.setEmail(email);
-            p.setNama(nama);
-            p.setPassword(password);
-            p.update();
-            response.sendRedirect(request.getContextPath()+"/PembeliController?id="+id);
+            
+            admin.setId(Integer.parseInt(id));
+            admin.setNama(nama);
+            admin.setEmail(email);
+            admin.setPassword(password);
+            admin.updateProfile();
+            
+            response.sendRedirect("profilAdmin.jsp");
         }
     }
 

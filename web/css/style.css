@@ -413,3 +413,111 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
    
 }
 
+.book-admin-table .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.book-admin-table .content-table td {
+    padding: 12px 14px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.header-admin {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.form-card {
+    background-color: #ffffff;
+    padding: 24px 30px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #333;
+}
+
+.form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.content-header-title {
+    padding: 20px;
+}
+
+.admin-nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.admin-nav .btn {
+    padding: 12px 24px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s ease-in-out;
+}
+
+.admin-nav .btn:hover {
+    background-color: darkgray;
+}
+
+.table-transaction .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.table-transaction .content-table td {
+    padding: 12px 14px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.header-transaction-admin {
+    padding: 20px;
+}
+
+.form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-title {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
