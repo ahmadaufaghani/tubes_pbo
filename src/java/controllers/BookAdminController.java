@@ -79,7 +79,7 @@ JDBC db = new JDBC();
             Integer harga = Integer.parseInt(request.getParameter("harga"));
 
             db.runQuery("UPDATE buku SET judul='" + judul + "', penulis='" + penulis + "', tahunTerbit=" + tahun + ", jumlahHalaman=" + halaman + ", harga=" + harga + " WHERE id=" + id);
-            response.sendRedirect("dashboardAdmin.jsp?page=book");
+            response.sendRedirect("bookAdmin.jsp");
 }
     }
 

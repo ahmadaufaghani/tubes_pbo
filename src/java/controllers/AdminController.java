@@ -87,7 +87,7 @@ public class AdminController extends HttpServlet {
                 request.getSession().setAttribute("adminData", adm);
                 response.sendRedirect("dashboardAdmin.jsp");
             } else {
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("loginAdmin.jsp");
             }
         } else if (menu.equals("register")) {
             String nama = request.getParameter("nama");

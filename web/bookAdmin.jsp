@@ -46,7 +46,7 @@
             <td><%= book.getPenulis() %></td>
             <td><%= book.getTahunTerbit() %></td>
             <td><%= book.getJumlahHalaman() %></td>
-            <td><%= book.getHarga() %></td>
+            <td>$<%= book.getHarga() %></td>
             <td>
                 <a href="BookAdminController?menu=edit&id=<%= book.getId() %>">Edit</a> |
                 <a href="BookAdminController?menu=delete&id=<%= book.getId() %>">Hapus</a>
